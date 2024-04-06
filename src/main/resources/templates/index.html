@@ -13,5 +13,26 @@
             <span th:text="${language}"></span>
         </li>
     </ul> </div>
+<div th:text="${username}" th:id="|div-${username}|">Roman Kovinia</div>
+<div th:text="${newuser.getName()}"></div>
+<div th:text="${newuser.name}"></div>
+<div th:text="${capitalsOfTheWorld['Belgium']}"></div>
+<div th:text="${Users[0].name}"></div>
+<div th:text="#{dashboard.Markelova}"></div>
+<div th:text="#{dashboard.Kovinia}"></div>
+<div th:text="#{dashboard.Bondareva}"></div>
+<ul>
+    <li th:each="user:${Users}" th:object="${user}">
+        <div th:if="${user.surname.length()>9}">[[*{surname}]]</div>
+        <div th:unless="${user.surname.length() > 9}">[[*{name}]]</div>
+    </li>
+</ul>
+
+<p>[[${Users[3].name}]] - <a th:href="@{https://www.instagram.com/_roma.shka.__/}" target="_blank">Instagram</a></p>
+<p>[[${Users[2].name}]] - <a th:href="@{https://www.instagram.com/fiufeee/}" target="_blank">Instagram</a></p>
+
+<div th:text="#{__${task10}__}"></div>
+
+<div ></div>
 </body>
 </html>
